@@ -26,8 +26,6 @@ from .serializers import (AuthorSerializer,
 
 class PostApiView(viewsets.ModelViewSet):
     queryset = Post.objects.all()
-    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    # authentication_classes = [TokenAuthentication, ]
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
@@ -38,7 +36,7 @@ class PostApiView(viewsets.ModelViewSet):
 
 class AuthorApiView(viewsets.ModelViewSet):
     queryset = Author.objects.all()
-    # permission_classes = [permissions.IsAuthenticated]
+
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
@@ -49,8 +47,6 @@ class AuthorApiView(viewsets.ModelViewSet):
 
 class OrganizationApiView(viewsets.ModelViewSet):
     queryset = Organization.objects.all()
-    # authentication_classes = [TokenAuthentication, ]
-    # permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
         if self.request.method == "GET":
@@ -61,8 +57,6 @@ class OrganizationApiView(viewsets.ModelViewSet):
 
 class TagApiView(viewsets.ModelViewSet):
     queryset = Tag.objects.all()
-    # permission_classes = [permissions.IsAuthenticated]
-    # authentication_classes = [TokenAuthentication, ]
 
     def get_serializer_class(self):
         if self.request.method == "GET":
@@ -73,8 +67,6 @@ class TagApiView(viewsets.ModelViewSet):
 
 class CategoryApiView(viewsets.ModelViewSet):
     queryset = Category.objects.all()
-    # permission_classes = [permissions.IsAuthenticated]
-    # authentication_classes = [TokenAuthentication, ]
 
     def get_serializer_class(self):
         if self.request.method == "GET":
